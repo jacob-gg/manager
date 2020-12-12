@@ -2,10 +2,13 @@ Package: manager
 Title: Tools
 Version: 0.1.0
 Authors@R: person("Jacob", "Goldstein-Greenwood", email = "jacobgg@virginia.edu", role = c("aut", "cre"))
-Description: Includes lochMissingnessMonster (provides an easy-to-intepret breakdown of missingness
-    in datasets) and dupDetect (identifies duplicated values in vectors beyond what base::duplicated
-    provides and aids in removing them).
+Description: Includes loch_missingness_monster (provides an easy-to-intepret breakdown of missingness
+    in datasets), dup_detect (identifies duplicated values in vectors beyond what base::duplicated
+    provides and aids in removing them), and golem (retrieves geolocation data for IP addresses).
 License: Mozilla Public License 2.0
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
+Imports:
+    magrittr,
+    stringi
