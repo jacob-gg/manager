@@ -17,10 +17,10 @@
 #' @export
 golem <- function(ip) {
   # Checks
-  if('stringi' %in% utils::installed.packages() == FALSE) {
+  if ('stringi' %in% utils::installed.packages() == FALSE) {
     stop('Error: stringi not installed; use install.packages("stringi")')
   }
-  if('magrittr' %in% utils::installed.packages() == FALSE) {
+  if ('magrittr' %in% utils::installed.packages() == FALSE) {
     stop('Error: stringi not installed; use install.packages("magrittr")')
   }
 

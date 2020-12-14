@@ -27,25 +27,37 @@
 #'   ip_addresses[i] <- paste0(sample(ip_draw, 4, replace = TRUE), collapse = ".")
 #' }
 #' ip_addresses <- as.factor(ip_addresses)
-#' ip_addresses[sample(1:1000, 10, replace = F)] <- sample(ip_addresses, 10, replace = F)
+#' ip_addresses[sample(1:1000, 10, replace = FALSE)] <- sample(ip_addresses, 10, replace = FALSE)
 #' dup_detect(ip_addresses)
 #'
 #' @export
 dup_detect <- function(test_col, save = T) {
+  # Identify rows containing duplicated values
   duplicated_rows <- which(duplicated(test_col))
-  if(length(duplicated_rows) == 0) {stop("Function halted. There are no duplicated values. Congrats!")}
+
+  # Halt if no duplicates
+  if (length(duplicated_rows) == 0) {stop("Function halted. There are no duplicated values. Congrats!")}
+
+  # Identify duplicated values
   duplicated_values <- unique(test_col[duplicated_rows])
-  if(save == T){
+
+  # Produce global variable depending on save = T|F
+  if (save == T) {
     every_duplicated_row <<- which(test_col %in% duplicated_values)
   } else {
     every_duplicated_row <- which(test_col %in% duplicated_values)
   }
+
+  # Format and generate output
   dup_row_string <- NA
   cat("\n")
   cat("Total # of rows with a duplicate value for the specified variable: ", length(every_duplicated_row), "\n", sep = "")
-  for(i in 1:length(duplicated_values)) {
-    dup_row_string[i] <- capture.output(cat(which(test_col %in% duplicated_values[i]), sep = ", "))
+  for (i in 1:length(duplicated_values)) {
+    dup_row_string[i] <- utils::capture.output(cat(which(test_col %in% duplicated_values[i]), sep = ", "))
     cat("The following rows share the value of ", as.character(duplicated_values[i]), ": ", dup_row_string[i], "\n", sep = "")
   }
+
+  # Identify and output variable class
   cat("(Variable type: ", class(test_col), ")", "\n", sep = "")
+
 }

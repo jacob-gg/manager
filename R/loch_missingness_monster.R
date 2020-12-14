@@ -30,13 +30,19 @@
 #' loch_missingness_monster(lmm_example2, 40)
 #'
 #' @export
-loch_missingness_monster <- function(data, percent){
+loch_missingness_monster <- function(data, percent) {
+  # Count NAs per column
   col_missing_count <- apply(is.na(data), 2, sum)
-  cat("\n")
-  cat("There are", sum(col_missing_count), "missing values in the dataset", "\n \n")
+
+  # Report total NAs in the data
+  cat("There are", sum(col_missing_count), "missing values in the dataset", "\n")
+
+  # Report column with max missingness
   cat("The maximum number of values that any variable is missing is", max(col_missing_count), "\n \n")
-  if(ncol(data) <= 10) {
-    for(i in 1:ncol(data)) {
+
+  # Report variable-by-variable missingness
+  if (ncol(data) <= 10) {
+    for (i in 1:ncol(data)) {
       cat("The variable", colnames(data)[i], "has", col_missing_count[[i]], "missing values", "\n")
     }
   } else {
@@ -46,11 +52,13 @@ loch_missingness_monster <- function(data, percent){
     print(missing_table, row.names = FALSE)
   }
   cat("\n")
+
+  # Calculate row-by-row missingness and determine which rows have missingness in excess of the specified percentage
   missing_per_row <- (apply(is.na(data), 1, sum)/ncol(data))*100
   exceeds_percent <- c()
   for (p in 1:length(missing_per_row)) {
     exceeds_percent[p] <- missing_per_row[p] > percent
-    if(exceeds_percent[p] == TRUE) {
+    if (exceeds_percent[p] == TRUE) {
       cat("Row", p, "is missing more than", percent, "percent of values", "\n")
     }
   }

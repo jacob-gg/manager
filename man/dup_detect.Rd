@@ -39,7 +39,7 @@ for(i in 1:1000) {
   ip_addresses[i] <- paste0(sample(ip_draw, 4, replace = TRUE), collapse = ".")
 }
 ip_addresses <- as.factor(ip_addresses)
-ip_addresses[sample(1:1000, 10, replace = F)] <- sample(ip_addresses, 10, replace = F)
+ip_addresses[sample(1:1000, 10, replace = FALSE)] <- sample(ip_addresses, 10, replace = FALSE)
 dup_detect(ip_addresses)
 
 }
