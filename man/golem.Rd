@@ -16,7 +16,7 @@ A data frame with geolocation data.
 Retrieves geolocation data for IP addresses from http://freegeoip.live.
 }
 \details{
-\code{golem} will retrieve the country, region, city, zip, time code, latitude, longitude, and metro code for IP addresses you give it.
+\code{golem()} will retrieve the country, region, city, zip, time code, latitude, longitude, and metro code for IP addresses you give it.
 
 Requires: \code{stringi} and \code{magrittr} (pipe)
 }

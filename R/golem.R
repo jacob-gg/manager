@@ -2,7 +2,7 @@
 #'
 #' Retrieves geolocation data for IP addresses from http://freegeoip.live.
 #'
-#' \code{golem} will retrieve the country, region, city, zip, time code, latitude, longitude, and metro code for IP addresses you give it.
+#' \code{golem()} will retrieve the country, region, city, zip, time code, latitude, longitude, and metro code for IP addresses you give it.
 #'
 #' Requires: \code{stringi} and \code{magrittr} (pipe)
 #'
@@ -48,5 +48,4 @@ golem <- function(ip) {
   dat[, c('latitude', 'longitude')] <- apply(dat[, c('latitude', 'longitude')], 2, function(x) as.numeric(as.character(x)))
 
   invisible(dat)
-
 }

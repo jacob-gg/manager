@@ -12,13 +12,13 @@ loch_missingness_monster(data, percent)
 \item{percent}{A percent (numeric)}
 }
 \value{
-\code{loch_missingness_monster} just returns output in the console
+\code{loch_missingness_monster()} just returns output in the console
 }
 \description{
 Provides an easy-to-interpret in-console breakdown of missingness in data sets.
 }
 \details{
-\code{loch_missingness_monster} will tell you:
+\code{loch_missingness_monster()} will tell you:
 \itemize{
   \item The total number of missing values (NA) in the data set
   \item The maximum number of values that any variable is missing

@@ -2,9 +2,9 @@
 #'
 #' Identifies rows in a data set with duplicate values for a given column (e.g., survey responses with the same IP address, which may pose a bot risk) and aids in removing them.
 #'
-#' \code{dup_detect} is more than \code{base::duplicated}. If you fed a vector with the values \code{c(5, 5, 7)} to \code{duplicated}, the function would identify one duplicated value (just the second five). But for the purposes of bot detection and data wrangling, we often want to identify \emph{all} matching values in, say, a column of IP addresses (i.e., identify both 5s in the vector above as duplicates, not just the second one).
+#' \code{dup_detect()} is more than \code{base::duplicated()}. If you fed a vector with the values \code{c(5, 5, 7)} to \code{duplicated()}, the function would identify one duplicated value (just the second five). But for the purposes of bot detection and data wrangling, we often want to identify \emph{all} matching values in, say, a column of IP addresses (i.e., identify both 5s in the vector above as duplicates, not just the second one).
 #'
-#' \code{dup_detect} will:
+#' \code{dup_detect()} will:
 #' \itemize{
 #'   \item Tell you the total number of duplicated values in a data frame column (/vector) you identify (e.g., IP addresses; latitude; longitude).
 #'   \item Tell you which rows (/vector elements) match each specific duplicated value.
@@ -59,5 +59,4 @@ dup_detect <- function(test_col, save = T) {
 
   # Identify and output variable class
   cat("(Variable type: ", class(test_col), ")", "\n", sep = "")
-
 }

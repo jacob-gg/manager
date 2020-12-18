@@ -2,7 +2,7 @@
 #'
 #' Provides an easy-to-interpret in-console breakdown of missingness in data sets.
 #'
-#' \code{loch_missingness_monster} will tell you:
+#' \code{loch_missingness_monster()} will tell you:
 #' \itemize{
 #'   \item The total number of missing values (NA) in the data set
 #'   \item The maximum number of values that any variable is missing
@@ -13,7 +13,7 @@
 #'
 #' @param data A data frame
 #' @param percent A percent (numeric)
-#' @return \code{loch_missingness_monster} just returns output in the console
+#' @return \code{loch_missingness_monster()} just returns output in the console
 #' @examples
 #' # Case with <=10 variables:
 #' lmm_example <- data.frame(c(1, NA, 3, 3, 6, 3),
