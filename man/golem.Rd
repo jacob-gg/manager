@@ -7,7 +7,7 @@
 golem(ip)
 }
 \arguments{
-\item{ip}{A vector one or more IP addresses}
+\item{ip}{A vector one or more IP addresses.}
 }
 \value{
 A data frame with geolocation data.

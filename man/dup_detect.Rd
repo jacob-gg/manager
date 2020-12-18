@@ -9,7 +9,7 @@ dup_detect(test_col, save = T)
 \arguments{
 \item{test_col}{A vector (generally a column from a data frame).}
 
-\item{save}{\code{T} or \code{F} (default is \code{T})}
+\item{save}{\code{T} or \code{F} (default is \code{T}).}
 }
 \value{
 \itemize{

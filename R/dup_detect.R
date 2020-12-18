@@ -12,7 +12,7 @@
 #' }
 #'
 #' @param test_col A vector (generally a column from a data frame).
-#' @param save \code{T} or \code{F} (default is \code{T})
+#' @param save \code{T} or \code{F} (default is \code{T}).
 #' @return
 #' \itemize{
 #'   \item Console output with a breakdown of duplicativeness.

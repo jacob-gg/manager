@@ -4,16 +4,16 @@
 #'
 #' \code{loch_missingness_monster()} will tell you:
 #' \itemize{
-#'   \item The total number of missing values (NA) in the data set
-#'   \item The maximum number of values that any variable is missing
-#'   \item How many values each variable is missing
-#'   \item Which rows are missing values in excess of a percent that you specify
+#'   \item The total number of missing values (NA) in the data set.
+#'   \item The maximum number of values that any variable is missing.
+#'   \item How many values each variable is missing.
+#'   \item Which rows are missing values in excess of a percent that you specify.
 #' }
 #' (The output comes in sentence form if there are less or equal to than 10 variables, and table form if there are more than 10.)
 #'
-#' @param data A data frame
-#' @param percent A percent (numeric)
-#' @return \code{loch_missingness_monster()} just returns output in the console
+#' @param data A data frame.
+#' @param percent A percent (numeric).
+#' @return \code{loch_missingness_monster()} just returns output in the console.
 #' @examples
 #' # Case with <=10 variables:
 #' lmm_example <- data.frame(c(1, NA, 3, 3, 6, 3),

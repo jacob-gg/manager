@@ -6,7 +6,7 @@
 #'
 #' Requires: \code{stringi} and \code{magrittr} (pipe)
 #'
-#' @param ip A vector one or more IP addresses
+#' @param ip A vector one or more IP addresses.
 #' @return A data frame with geolocation data.
 #' @examples
 #' ips <- c('68.38.164.93', '192.198.85.59', '73.32.208.180', '2604:3d08:1580:2d0:1cd4:dafd:f848:4fb9')

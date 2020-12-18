@@ -7,12 +7,12 @@
 loch_missingness_monster(data, percent)
 }
 \arguments{
-\item{data}{A data frame}
+\item{data}{A data frame.}
 
-\item{percent}{A percent (numeric)}
+\item{percent}{A percent (numeric).}
 }
 \value{
-\code{loch_missingness_monster()} just returns output in the console
+\code{loch_missingness_monster()} just returns output in the console.
 }
 \description{
 Provides an easy-to-interpret in-console breakdown of missingness in data sets.
@@ -20,10 +20,10 @@ Provides an easy-to-interpret in-console breakdown of missingness in data sets.
 \details{
 \code{loch_missingness_monster()} will tell you:
 \itemize{
-  \item The total number of missing values (NA) in the data set
-  \item The maximum number of values that any variable is missing
-  \item How many values each variable is missing
-  \item Which rows are missing values in excess of a percent that you specify
+  \item The total number of missing values (NA) in the data set.
+  \item The maximum number of values that any variable is missing.
+  \item How many values each variable is missing.
+  \item Which rows are missing values in excess of a percent that you specify.
 }
 (The output comes in sentence form if there are less or equal to than 10 variables, and table form if there are more than 10.)
 }
