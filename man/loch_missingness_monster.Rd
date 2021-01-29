@@ -4,12 +4,12 @@
 \alias{loch_missingness_monster}
 \title{loch_missingness_monster}
 \usage{
-loch_missingness_monster(data, percent)
+loch_missingness_monster(dat, percent = NA)
 }
 \arguments{
-\item{data}{A data frame.}
+\item{dat}{A data frame.}
 
-\item{percent}{A percent (numeric).}
+\item{percent}{A number (optional).}
 }
 \value{
 \code{loch_missingness_monster()} just returns output in the console.
@@ -23,9 +23,9 @@ Provides an easy-to-interpret in-console breakdown of missingness in data sets.
   \item The total number of missing values (NA) in the data set.
   \item The maximum number of values that any variable is missing.
   \item How many values each variable is missing.
-  \item Which rows are missing values in excess of a percent that you specify.
+  \item If desired, which rows are missing values in excess of a percent that you specify.
 }
-(The output comes in sentence form if there are less or equal to than 10 variables, and table form if there are more than 10.)
+(The output comes in sentence form if there are less or equal to than 10 variables; it comes in table form if there are more than 10.)
 }
 \examples{
 # Case with <=10 variables:
@@ -36,7 +36,6 @@ colnames(lmm_example) <- c("var1", "var2", "var3")
 loch_missingness_monster(lmm_example, 65)
 
 # Case with > 10 variables:
-set.seed <- 4
 lmm_example2 <- replicate(12, sample(1:10, 3, replace = TRUE))
 lmm_example2[sample(length(lmm_example2), 13, replace = FALSE)] <- NA
 colnames(lmm_example2) <- paste0('var', 1:12, sep = '')
