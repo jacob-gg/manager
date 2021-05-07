@@ -21,7 +21,7 @@ golem <- function(ip) {
     stop('Error: stringi not installed; use install.packages("stringi")')
   }
   if ('magrittr' %in% utils::installed.packages() == FALSE) {
-    stop('Error: stringi not installed; use install.packages("magrittr")')
+    stop('Error: magrittr not installed; use install.packages("magrittr")')
   }
 
   dat <- data.frame()
