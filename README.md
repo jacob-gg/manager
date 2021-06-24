@@ -1,5 +1,5 @@
 # manager
-Basic tools for wrangling, understanding, and general gerund-ing of data.
+Tools for wrangling, understanding, and general gerund-ing of data.
 
 `loch_missingness_monster`: provides an easy-to-interpret breakdown of missingness in datasets
 
