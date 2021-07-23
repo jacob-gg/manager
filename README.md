@@ -20,4 +20,6 @@ Winograd schemas require commonsense human reasoning, and they're difficult for 
 I've implemented Winograd schemas to try and preserve data quality when collecting responses via Prolific/Reddit/MTurk/etc. My experience is that they can actually do a bit *too good* of a job of flagging responses as potential bots: It's not hard to give the wrong response to a Winograd schema, especially if you're moving quickly, but I often prefer to be overly conservative in the face of bot risk/low-attention responses.
 </details>
 
+- `non_person_regex`: A regex pattern for identifying names that are likely to be businesses, educational institutions, government entities, etc., as opposed to individuals (the package also contains a dataset and accompanying function for testing the pattern's efficacy; `test_names` and `check_regex`, respectively)
+
 License: MPL 2.0
