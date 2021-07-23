@@ -6,8 +6,8 @@ Tools for wrangling, understanding, and general gerund-ing of data.
 - `golem()`: Retrieves geolocation data for IP addresses
 - `winograd()`: Fetches a Winograd schema (from [here](https://cs.nyu.edu/~davise/papers/WinogradSchemas/WSCollection.html)) for use in survey bot detection--or for anything else
 
-<details><summary>(Click here for additional details on `winograd()`</summary><br/>
-Each time `winograd()` is run, it pulls, via web scraping with `rvest`, the text of one Winograd schema from [this website](https://cs.nyu.edu/~davise/papers/WinogradSchemas/WSCollection.html) (website created by Ernest Davis; available under a CC 4.0 license).
+<details><summary>(Click here for additional details on winograd)</summary><br/>
+Each time the function is run, it pulls, via web scraping with rvest, the text of one Winograd schema from the following website (website created by Ernest Davis; available under a CC 4.0 license): https://cs.nyu.edu/~davise/papers/WinogradSchemas/WSCollection.html
 
 A Winograd schema is a sentence that includes an ambiguous pronoun that could refer to either of two antecedent nouns. Which noun the pronoun is rightly associated with depends on which of two words/phrases is present elsewhere in the sentence. For example:
 
