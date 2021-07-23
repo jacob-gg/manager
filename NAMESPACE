@@ -3,4 +3,5 @@
 export(dup_detect)
 export(golem)
 export(loch_missingness_monster)
+export(winograd)
 importFrom(magrittr,"%>%")
