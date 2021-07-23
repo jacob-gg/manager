@@ -27,20 +27,20 @@
 #'
 #' Requires: \code{stringi}
 #'
-#' @param NA No arguments
+#' @param ... no arguments needed
 #' @return Output in the console describing the results of the check.
 #' @examples
 #' check_regex()
 #'
 #' @export
-check_regex <- function() {
+check_regex <- function(...) {
   matched <- stringi::stri_detect(manager::test_names$name, regex = manager::non_person_regex)
   cat('non_person_regex has been passed to stringi::stri_detect() to comb through the test_names dataset, yielding the following:\n',
     'Successfully matching:', paste0(sum(matched), '/',
-                                       nrow(manager::test_names[test_names$type == 'non-person', ])),
+                                       nrow(manager::test_names[manager::test_names$type == 'non-person', ])),
       'non-person names\n',
       'Successfully skipping:', paste0(sum(matched == F), '/',
-                                       nrow(manager::test_names[test_names$type == 'person', ])),
+                                       nrow(manager::test_names[manager::test_names$type == 'person', ])),
       "individuals' names\n",
       'Unmatched by the pattern:', paste0(manager::test_names$name[!matched], collapse = ', '), '\n',
     'Call non_person_regex to see the pattern or use View(test_names) to see the test dataset.')

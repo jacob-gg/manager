@@ -4,10 +4,10 @@
 \alias{check_regex}
 \title{check_regex}
 \usage{
-check_regex()
+check_regex(...)
 }
 \arguments{
-\item{NA}{No arguments}
+\item{...}{no arguments needed}
 }
 \value{
 Output in the console describing the results of the check.
