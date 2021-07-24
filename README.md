@@ -21,5 +21,3 @@ I've implemented Winograd schemas to try and preserve data quality when collecti
 </details>
 
 - `non_person_regex`: A regex pattern for identifying names that are likely to be businesses, educational institutions, government entities, etc., as opposed to individuals (the package also contains a dataset and accompanying function for testing the pattern's efficacy; `test_names` and `check_regex`, respectively)
-
-License: MPL 2.0
