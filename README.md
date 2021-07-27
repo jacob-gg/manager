@@ -1,5 +1,5 @@
 # manager
-Tools for wrangling, understanding, and general gerund-ing of data.
+Tools for wrangling, understanding, and managing data.
 
 - `loch_missingness_monster()`: Provides an easy-to-interpret breakdown of missingness in datasets | &#402;(x)
 - `dup_detect()`: Identifies duplicated values in vectors/columns (beyond what `base::duplicated` offers) and assists in removing them | &#402;(x)
