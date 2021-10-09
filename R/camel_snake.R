@@ -19,14 +19,18 @@
 to_snake <- function(x, nums_to_snake = T) {
   # Check class of x
   if (is.character(x) == F) {x <- as.character(x)}
+
   # Check presence of capitals in positions other than first
   if (length(grep('(?<!^)([A-Z])', x, perl = T)) == 0) {stop('No camel humps found. Check input.')}
+
   # Determine regex based on whether numbers should be snaked as well
   pattern <- ifelse(nums_to_snake == T,
                     '(?<!^)([A-Z]|\\d{1,})',
                     '(?<!^)([A-Z])')
+
   # Insert _'s and convert to lowercase
   x <- tolower(gsub(pattern,  '_\\1', x, perl = T))
+
   # Return
   x
 }
@@ -52,14 +56,18 @@ to_snake <- function(x, nums_to_snake = T) {
 to_camel <- function(x, nums_to_camel = T) {
   # Check class of x; convert to character if needed
   if (is.character(x) == F) {x <- as.character(x)}
+
   # Check presence of underscores in positions other than the first
   if (length(grep('(?<!^)(_)', x, perl = T)) == 0) {stop('No snake segments found. Check input.')}
+
   # Determine regex based on whether numbers should be cameled as well
   pattern <- ifelse(nums_to_camel == T,
                     '(?<!^)(_{1,})([a-z]|[A-Z]|\\d{1,})',
                     '(?<!^)(_{1,})([a-z]|[A-Z])')
+
   # Camel
   x <- gsub(pattern, '\\U\\2', x, perl = T)
+
   # Return
   x
 }

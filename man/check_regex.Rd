@@ -16,7 +16,7 @@ Output in the console describing the results of the check.
 Checks efficacy of \code{non_person_regex} in flagging non-person names.
 }
 \details{
-\code{check_regex} checks whether the pattern contained in \code{non_person_regex} successfully tags all of the non-person names in the \code{test_names} dataset as non-persons while skipping the individuals' "distraction" names.
+\code{check_regex} checks whether the pattern contained in \code{non_person_regex} successfully tags all of the non-person names in the \code{test_names} dataset as non-persons while skipping individuals' "distraction" names.
 
 Requires: \code{stringi}
 }

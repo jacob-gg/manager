@@ -16,4 +16,7 @@ non_person_regex
 \description{
 A regex pattern that matches names that are likely to be non-persons (e.g., businesses, educational institutions, government entities, etc.)
 }
+\details{
+User \code{check_regex()} to check \code{non_person_regex} against a test data set, \code{test_names}.
+}
 \keyword{datasets}

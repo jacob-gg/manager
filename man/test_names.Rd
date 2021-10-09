@@ -3,12 +3,12 @@
 \docType{data}
 \name{test_names}
 \alias{test_names}
-\title{Set of names for testing efficacy of \code{non_person_regex}}
+\title{Set of names for testing the efficacy of \code{non_person_regex}}
 \format{
 A data frame with 232 rows and 2 variables:
 \describe{
-  \item{name}{the name}
-  \item{type}{the type of name, non-person or person}
+  \item{\code{name}}{The name}
+  \item{\code{type}}{The type of name, non-person or person}
 }
 }
 \source{

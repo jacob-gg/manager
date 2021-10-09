@@ -19,7 +19,6 @@
 #'
 #' @export
 winograd <- function(seed = Sys.time()) {
-
   # Check
   if (all(c('rvest', 'stringi') %in% utils::installed.packages()) == F) {
     stop('Package check failed: Ensure that `rvest`, `xml2`, and `stringi` are installed')
@@ -54,5 +53,4 @@ winograd <- function(seed = Sys.time()) {
   }
 
   wino_text
-
 }
