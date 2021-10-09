@@ -3,7 +3,7 @@
 \docType{data}
 \name{test_names}
 \alias{test_names}
-\title{Set of names for testing efficacy of non_person_regex}
+\title{Set of names for testing efficacy of \code{non_person_regex}}
 \format{
 A data frame with 232 rows and 2 variables:
 \describe{
@@ -12,12 +12,12 @@ A data frame with 232 rows and 2 variables:
 }
 }
 \source{
-Created by JGG
+Created by github.com/jacob-gg
 }
 \usage{
 test_names
 }
 \description{
-A dataset containing a mix of non-person names (e.g., "Downtown Books," "Supreme Vacuums, LLC") and individuals' names that can be used to test whether the effecicacy of the regex pattern \code{non_person_regex}.
+A data frame containing a mix of non-person names (e.g., "Downtown Books," "Supreme Vacuums, LLC") and individuals' names that can be used to test the efficacy of the regex pattern \code{non_person_regex}.
 }
 \keyword{datasets}

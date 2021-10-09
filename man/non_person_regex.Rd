@@ -8,7 +8,7 @@
 A character string
 }
 \source{
-Created by JGG
+Created by github.com/jacob-gg
 }
 \usage{
 non_person_regex
