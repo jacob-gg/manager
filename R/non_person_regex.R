@@ -21,21 +21,20 @@
 #' @source Created by github.com/jacob-gg
 'test_names'
 
-#' check_regex
+#' check_non_person_regex
 #'
 #' Checks efficacy of \code{non_person_regex} in flagging non-person names.
 #'
-#' \code{check_regex} checks whether the pattern contained in \code{non_person_regex} successfully tags all of the non-person names in the \code{test_names} dataset as non-persons while skipping individuals' "distraction" names.
+#' \code{check_non_person_regex()} checks whether the pattern contained in \code{non_person_regex} successfully tags all of the non-person names in the \code{test_names} dataset as non-persons while skipping individuals' "distraction" names.
 #'
 #' Requires: \code{stringi}
 #'
-#' @param ... no arguments needed
 #' @return Output in the console describing the results of the check.
 #' @examples
-#' check_regex()
+#' check_non_person_regex()
 #'
 #' @export
-check_regex <- function(...) {
+check_non_person_regex <- function() {
   matched <- stringi::stri_detect(manager::test_names$name, regex = manager::non_person_regex)
   cat('non_person_regex has been passed to stringi::stri_detect() to comb through the test_names dataset, yielding the following:\n',
     'Successfully matching:', paste0(sum(matched), '/',
