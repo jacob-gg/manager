@@ -10,13 +10,13 @@ Tools for wrangling, understanding, and managing data.
         - `test_names` | &#8500;
         - `check_regex()` | &#402;(x)
 - `to_camel()` and `to_snake()`: Convert strings between `snake_case` and `camelCase` | &#402;(x)
-- `%+%`: String-concatenation inflix operator, a la `+` in Python | &#9881;
+- `%+%`: String-concatenation inflix operator, a la `+` in Python | &#9874;
 
 Tags:
 
 - &#402;(x) - function
 - &#8500; - object
-- &#9881; - operator
+- &#9874; - operator
 
 <details><summary>Click here for additional details on winograd function</summary><br/>
 Each time the function is run, it pulls, via web scraping with rvest, the text of one Winograd schema from the following website (website created by Ernest Davis; available under a CC 4.0 license): https://cs.nyu.edu/~davise/papers/WinogradSchemas/WSCollection.html<br><br>
