@@ -8,7 +8,7 @@ Tools for wrangling, understanding, and managing data.
 - `non_person_regex`: A regex pattern for identifying names that are likely to be businesses, educational institutions, government entities, etc., as opposed to individuals | &#8500;
     - The package also contains a dataset and accompanying function for testing the pattern's efficacy:
         - `test_names` | &#8500;
-        - `check_regex()` | &#402;(x)
+        - `check_non_person_regex()` | &#402;(x)
 - `to_camel()` and `to_snake()`: Convert strings between `snake_case` and `camelCase` | &#402;(x)
 - `%+%`: String-concatenation inflix operator, a la `+` in Python | &#9874;
 
