@@ -6,7 +6,7 @@ Tools for wrangling, understanding, and managing data.
 - `golem()`: Retrieves geolocation data for IP addresses | &#402;(x)
 - `winograd()`: Fetches a Winograd schema (from [here](https://cs.nyu.edu/~davise/papers/WinogradSchemas/WSCollection.html)) for use in survey bot detection--or for anything else (more details below) | &#402;(x)
 - `non_person_regex`: A regex pattern for identifying names that are likely to be businesses, educational institutions, government entities, etc., as opposed to individuals | &#8500;
-    - The package also contains a dataset and accompanying function for testing the pattern's efficacy:
+    - The package also contains a data set and accompanying function for testing the pattern's efficacy:
         - `test_names` | &#8500;
         - `check_non_person_regex()` | &#402;(x)
 - `to_camel()` and `to_snake()`: Convert strings between `snake_case` and `camelCase` | &#402;(x)

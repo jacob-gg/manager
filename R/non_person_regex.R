@@ -25,7 +25,7 @@
 #'
 #' Checks efficacy of \code{non_person_regex} in flagging non-person names.
 #'
-#' \code{check_non_person_regex()} checks whether the pattern contained in \code{non_person_regex} successfully tags all of the non-person names in the \code{test_names} dataset as non-persons while skipping individuals' "distraction" names.
+#' \code{check_non_person_regex()} checks whether the pattern contained in \code{non_person_regex} successfully tags all of the non-person names in the \code{test_names} data set as non-persons while skipping individuals' "distraction" names.
 #'
 #' Requires: \code{stringi}
 #'
@@ -36,7 +36,7 @@
 #' @export
 check_non_person_regex <- function() {
   matched <- stringi::stri_detect(manager::test_names$name, regex = manager::non_person_regex)
-  cat('non_person_regex has been passed to stringi::stri_detect() to comb through the test_names dataset, yielding the following:\n',
+  cat('non_person_regex has been passed to stringi::stri_detect() to comb through the test_names data set, yielding the following:\n',
     'Successfully matching:', paste0(sum(matched), '/',
                                        nrow(manager::test_names[manager::test_names$type == 'non-person', ])),
       'non-person names\n',
@@ -44,5 +44,5 @@ check_non_person_regex <- function() {
                                        nrow(manager::test_names[manager::test_names$type == 'person', ])),
       "individuals' names\n",
       'Unmatched by the pattern:', paste0(manager::test_names$name[!matched], collapse = ', '), '\n',
-    'Call non_person_regex to see the pattern or use View(test_names) to see the test dataset.')
+    'Call non_person_regex to see the pattern or use View(test_names) to see the test data set.')
 }
