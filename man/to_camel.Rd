@@ -25,7 +25,8 @@ E.g., if \code{x} is \code{c('aaa', 'bbb', '_ccc')}, \code{to_snake()} will erro
 No dependencies.
 }
 \examples{
-snakes <- c('rainbow_boa', 'blue_racer', 'dragon_snake', 'a_set_of_5_garter_snakes', 'a_larger_set_of_6_kingsnakes')
+snakes <- c('rainbow_boa', 'blue_racer', 'dragon_snake',
+'a_set_of_5_garter_snakes', 'a_larger_set_of_6_kingsnakes')
 to_camel(snakes)
 
 }

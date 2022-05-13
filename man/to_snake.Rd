@@ -25,7 +25,8 @@ Converts a vector of strings (usually column names) from camelCase to snake_case
 No dependencies.
 }
 \examples{
-camels <- c('dromedaryCamel', 'wildBactrianCamel', 'BactrianLookingUp', 'aCaravanOf10Camels', 'aLargerCaravanOf11')
+camels <- c('dromedaryCamel', 'wildBactrianCamel', 'BactrianLookingUp',
+'aCaravanOf10Camels', 'aLargerCaravanOf11')
 to_snake(camels)
 
 }

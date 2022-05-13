@@ -12,7 +12,8 @@
 #' @param nums_to_snake Should numbers be snake'd as well? ('z1' --> 'z_1')
 #' @return A vector.
 #' @examples
-#' camels <- c('dromedaryCamel', 'wildBactrianCamel', 'BactrianLookingUp', 'aCaravanOf10Camels', 'aLargerCaravanOf11')
+#' camels <- c('dromedaryCamel', 'wildBactrianCamel', 'BactrianLookingUp',
+#' 'aCaravanOf10Camels', 'aLargerCaravanOf11')
 #' to_snake(camels)
 #'
 #' @export
@@ -49,7 +50,8 @@ to_snake <- function(x, nums_to_snake = T) {
 #' @param nums_to_camel Should numbers be camel'ed as well? ('z_1_a' --> 'z1A')
 #' @return A vector.
 #' @examples
-#' snakes <- c('rainbow_boa', 'blue_racer', 'dragon_snake', 'a_set_of_5_garter_snakes', 'a_larger_set_of_6_kingsnakes')
+#' snakes <- c('rainbow_boa', 'blue_racer', 'dragon_snake',
+#' 'a_set_of_5_garter_snakes', 'a_larger_set_of_6_kingsnakes')
 #' to_camel(snakes)
 #'
 #' @export
