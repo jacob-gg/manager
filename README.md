@@ -11,6 +11,7 @@ Tools for wrangling, understanding, and managing data.
         - `check_non_person_regex()` | &#402;(x)
 - `to_camel()` and `to_snake()`: Convert strings between `snake_case` and `camelCase` | &#402;(x)
 - `%+%`: String-concatenation inflix operator, a la `+` in Python | &#9874;
+- `bray_curtis()`: Calculates the Bray-Curtis dissimilarity index (or Sorensen-Dice similarity index) between two sites (with site compositions given as vectors) | &#402;(x)
 
 Tags:
 
