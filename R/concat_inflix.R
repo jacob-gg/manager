@@ -4,8 +4,6 @@
 #'
 #' No dependencies.
 #'
-#' @usage
-#'
 #' @param ... Strings (or string-coercible objects) placed on either side of the \%+\% operator.
 #'
 #' @return A character vector with length equal to the maximum length of the inputs.

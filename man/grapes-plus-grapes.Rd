@@ -4,7 +4,7 @@
 \alias{\%+\%}
 \title{\%+\%}
 \usage{
-
+... \%+\% NA
 }
 \arguments{
 \item{...}{Strings (or string-coercible objects) placed on either side of the \%+\% operator.}
