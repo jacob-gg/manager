@@ -13,12 +13,12 @@ golem(ip)
 A data frame with geolocation data.
 }
 \description{
-Retrieves geolocation data for IP addresses from http://freegeoip.live.
+Retrieves geolocation data for IP addresses from http://freegeoip.live and returns results as a data frame.
 }
 \details{
-\code{golem()} will retrieve the country, region, city, zip, time code, latitude, longitude, and metro code for IP addresses you give it.
+\code{golem()} will retrieve the country, region, city, zip, time code, latitude, longitude, and metro code for IP addresses.
 
-Requires: \code{stringi} and \code{magrittr} (pipe)
+Requires: \code{magrittr} (pipe)
 }
 \examples{
 ips <- c('68.38.164.93', '192.198.85.59', '73.32.208.180', '2604:3d08:1580:2d0:1cd4:dafd:f848:4fb9')

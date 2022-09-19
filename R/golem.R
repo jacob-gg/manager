@@ -1,10 +1,10 @@
 #' golem
 #'
-#' Retrieves geolocation data for IP addresses from http://freegeoip.live.
+#' Retrieves geolocation data for IP addresses from http://freegeoip.live and returns results as a data frame.
 #'
-#' \code{golem()} will retrieve the country, region, city, zip, time code, latitude, longitude, and metro code for IP addresses you give it.
+#' \code{golem()} will retrieve the country, region, city, zip, time code, latitude, longitude, and metro code for IP addresses.
 #'
-#' Requires: \code{stringi} and \code{magrittr} (pipe)
+#' Requires: \code{magrittr} (pipe)
 #'
 #' @param ip A vector one or more IP addresses.
 #' @return A data frame with geolocation data.
@@ -17,35 +17,31 @@
 #' @export
 golem <- function(ip) {
   # Checks
-  if ('stringi' %in% utils::installed.packages() == FALSE) {
-    stop('Error: stringi not installed; use install.packages("stringi")')
-  }
-  if ('magrittr' %in% utils::installed.packages() == FALSE) {
-    stop('Error: magrittr not installed; use install.packages("magrittr")')
-  }
-
-  dat <- data.frame()
+  stopifnot(exprs = {
+    'magrittr' %in% utils::installed.packages()
+    is.vector(ip)
+    }
+  )
 
   # Retrieve data
+  dat <- data.frame(matrix(nrow = length(ip), ncol = 11))
   start <- Sys.time()
   for (i in 1:length(ip)) {
-    rowDat <- readLines(paste0('http://freegeoip.live/csv/', ip[i])) %>%
-      stringi::stri_split(fixed = ',') %>%
+    row_dat <- readLines(paste0('http://freegeoip.live/csv/', ip[i])) %>%
+      strsplit(x = ., split = ',', fixed = T) %>%
       unlist() %>%
       t()
-    dat <- rbind(dat, rowDat)
+    dat[i, ] <- row_dat
   }
   fin <- Sys.time()
-  if (length(ip) > 1) {
-    cat('Retrieving geolocation data for these', length(ip), 'IP addresses took', round(fin - start, digits = 2), 'seconds', '\n')
-  } else {
-    cat('Retrieving geolocation data for this IP address took', round(fin - start, digits = 2), 'seconds', '\n')
-  }
+
+  cat('Retrieving geolocation data for', ifelse(length(ip) == 1, 'this IP address', 'these IP addresses'),
+      'took', round(fin - start, digits = 2), 'seconds\n')
 
   # Structure data
-  colnames(dat) <- c('ip', 'country_code', 'country_name', 'region_code', 'region_name', 'city',
-                     'zip', 'time_code', 'latitude', 'longitude', 'metro_code')
+  colnames(dat) <- c('ip', 'country_code', 'country_name', 'region_code', 'region_name',
+                     'city', 'zip', 'time_code', 'latitude', 'longitude', 'metro_code')
   dat[, c('latitude', 'longitude')] <- apply(dat[, c('latitude', 'longitude')], 2, function(x) as.numeric(as.character(x)))
 
-  invisible(dat)
+  dat
 }
