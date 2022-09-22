@@ -10,8 +10,10 @@
 #'
 #' @return A number [0, 1].
 #' @examples
-#' area1 <- c('bubble-tip anemone', 'bubble-tip anemone', 'beaded sea anemone', 'sebae anemone', 'magnificent sea anemone')
-#' area2 <- c('bubble-tip anemone', 'bubble-tip anemone', 'bubble-tip anemone', 'corkscrew tentacle sea anemone')
+#' area1 <- c('bubble-tip anemone', 'bubble-tip anemone', 'beaded sea anemone',
+#'            'sebae anemone', 'magnificent sea anemone')
+#' area2 <- c('bubble-tip anemone', 'bubble-tip anemone', 'bubble-tip anemone',
+#'            'corkscrew tentacle sea anemone')
 #' bray_curtis(area1, area2)
 #'
 #' @export

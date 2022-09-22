@@ -28,7 +28,7 @@ golem <- function(ip) {
   start <- Sys.time()
   for (i in 1:length(ip)) {
     row_dat <- readLines(paste0('http://freegeoip.live/csv/', ip[i])) %>%
-      strsplit(x = ., split = ',', fixed = T) %>%
+      strsplit(split = ',', fixed = T) %>%
       unlist() %>%
       t()
     dat[i, ] <- row_dat

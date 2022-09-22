@@ -4,7 +4,8 @@
 #'
 #' No dependencies.
 #'
-#' @param ... Strings (or string-coercible objects) placed on either side of the \%+\% operator.
+#' @param lhs String (or string-coercible object) to be concatenated with the rhs (right-hand side).
+#' @param rhs String (or string-coercible object) to be concatenated with the lhs (left-hand side).
 #'
 #' @return A character vector with length equal to the maximum length of the inputs.
 #' @examples
@@ -17,8 +18,8 @@
 #' }
 #'
 #' @export
-'%+%' <- function(...) {
-  if (any(sapply(list(...), FUN = length) == 0)) {cat('Warning: Zero-length string detected.\n')}
-  if (any(sapply(list(...), FUN = length) > 1)) {cat('Warning: Argument with length > 1 detected; output will have length > 1.\n')}
-  paste(..., sep = ' ', recycle0 = FALSE)
+'%+%' <- function(lhs, rhs) {
+  if (any(sapply(list(lhs, rhs), FUN = length) == 0)) {cat('Warning: Zero-length string detected.\n')}
+  if (any(sapply(list(lhs, rhs), FUN = length) > 1)) {cat('Warning: Argument with length >1 detected; output has length >1.\n')}
+  paste(lhs, rhs, sep = ' ', recycle0 = FALSE)
 }

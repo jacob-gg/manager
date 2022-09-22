@@ -7,7 +7,7 @@
 loch_missingness_monster(dat, percent = NA)
 }
 \arguments{
-\item{dat}{A data frame.}
+\item{dat}{A data frame or matrix.}
 
 \item{percent}{A number (optional).}
 }
@@ -18,27 +18,18 @@ loch_missingness_monster(dat, percent = NA)
 Provides an easy-to-interpret in-console breakdown of missingness in data sets.
 }
 \details{
-\code{loch_missingness_monster()} will tell you:
+\code{loch_missingness_monster()} tells you:
 \itemize{
-  \item The total number of missing values (NA) in the data set.
-  \item The maximum number of values that any variable is missing.
-  \item How many values each variable is missing.
-  \item If desired, which rows are missing values in excess of a percent that you specify.
+  \item The total number of missing values (\code{NA}) in the data set.
+  \item A table indicating the count and percent of missing values per column.
+  \item Optionally, the number of rows missing values in excess of a percent that you specify.
 }
 (The output comes in sentence form if there are less or equal to than 10 variables; it comes in table form if there are more than 10.)
 }
 \examples{
-# Case with <=10 variables:
-lmm_example <- data.frame(c(1, NA, 3, 3, 6, 3),
-                            c(3, NA, NA, NA, NA, 6),
-                            c(3, 7, 2, NA, NA, 6))
-colnames(lmm_example) <- c("var1", "var2", "var3")
-loch_missingness_monster(lmm_example, 65)
-
-# Case with > 10 variables:
-lmm_example2 <- replicate(12, sample(1:10, 3, replace = TRUE))
-lmm_example2[sample(length(lmm_example2), 13, replace = FALSE)] <- NA
-colnames(lmm_example2) <- paste0('var', 1:12, sep = '')
-loch_missingness_monster(lmm_example2, 40)
+lmm_example <- replicate(12, sample(1:10, 3, replace = TRUE))
+lmm_example[sample(length(lmm_example), 13, replace = FALSE)] <- NA
+colnames(lmm_example) <- paste0('var', 1:12, sep = '')
+loch_missingness_monster(lmm_example, 40)
 
 }

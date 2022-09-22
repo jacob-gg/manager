@@ -4,10 +4,12 @@
 \alias{\%+\%}
 \title{\%+\%}
 \usage{
-... \%+\% NA
+lhs \%+\% rhs
 }
 \arguments{
-\item{...}{Strings (or string-coercible objects) placed on either side of the \%+\% operator.}
+\item{lhs}{String (or string-coercible object) to be concatenated with the rhs (right-hand side).}
+
+\item{rhs}{String (or string-coercible object) to be concatenated with the lhs (left-hand side).}
 }
 \value{
 A character vector with length equal to the maximum length of the inputs.
