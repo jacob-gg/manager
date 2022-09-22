@@ -30,7 +30,7 @@ to_snake <- function(x, nums_to_snake = T) {
                     '(?<!^)([A-Z])')
 
   # Insert _'s and convert to lowercase
-  x <- tolower(gsub(pattern,  '_\\1', x, perl = T))
+  x <- gsub(pattern,  '_\\L\\1', x, perl = T)
 
   # Return
   x
