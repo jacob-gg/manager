@@ -10,16 +10,16 @@
 #' @return A character vector with length equal to the maximum length of the inputs.
 #' @examples
 #' \dontrun{
-#' 'aaa' %+% 'bbb' %+% 'ccc' %+% 'ddd'
+#' 'aaa ' %+% 'bbb ' %+% 'ccc ' %+% 'ddd'
 #' # Zero-length inputs are concatenated in the resulting string as ''
-#' 'aaa' %+% 'bbb' %+% 'ccc' %+% 'ddd'[F]
+#' 'aaa ' %+% 'bbb ' %+% 'ccc ' %+% 'ddd'[F]
 #' # If an input has length > 1, the result has length > 1 and a warning is given
-#' c('aaa', 'bbb') %+% 'zzz'
+#' c('aaa ', 'bbb ') %+% 'zzz'
 #' }
 #'
 #' @export
 '%+%' <- function(lhs, rhs) {
   if (any(sapply(list(lhs, rhs), FUN = length) == 0)) {cat('Warning: Zero-length string detected.\n')}
   if (any(sapply(list(lhs, rhs), FUN = length) > 1)) {cat('Warning: Argument with length >1 detected; output has length >1.\n')}
-  paste(lhs, rhs, sep = ' ', recycle0 = FALSE)
+  paste0(lhs, rhs, recycle0 = FALSE)
 }

@@ -22,11 +22,11 @@ No dependencies.
 }
 \examples{
 \dontrun{
-'aaa' \%+\% 'bbb' \%+\% 'ccc' \%+\% 'ddd'
+'aaa ' \%+\% 'bbb ' \%+\% 'ccc ' \%+\% 'ddd'
 # Zero-length inputs are concatenated in the resulting string as ''
-'aaa' \%+\% 'bbb' \%+\% 'ccc' \%+\% 'ddd'[F]
+'aaa ' \%+\% 'bbb ' \%+\% 'ccc ' \%+\% 'ddd'[F]
 # If an input has length > 1, the result has length > 1 and a warning is given
-c('aaa', 'bbb') \%+\% 'zzz'
+c('aaa ', 'bbb ') \%+\% 'zzz'
 }
 
 }
