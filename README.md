@@ -4,10 +4,9 @@ Tools for wrangling, managing, and understanding data.
 Core tools:
 
 - `to_camel()` and `to_snake()`: Convert strings between `snake_case` and `camelCase` | &#402;(x)
-- `%+%`: String-concatenation inflix operator, a la `+` in Python | &#9874;
+- `%+%`: String-concatenation infix operator, a la `+` in Python | &#9874;
 - `loch_missingness_monster()`: Provides an easy-to-interpret breakdown of missingness in datasets | &#402;(x)
 - `dup_detect()`: Identifies duplicated values in vectors/columns (beyond what `base::duplicated()` offers) and assists in removing them | &#402;(x)
-- `golem()`: Retrieves geolocation data for IP addresses | &#402;(x)
 
 Miscellany:
 
