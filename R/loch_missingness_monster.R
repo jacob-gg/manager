@@ -1,6 +1,6 @@
 #' loch_missingness_monster
 #'
-#' Provides an easy-to-interpret in-console breakdown of missingness in data sets.
+#' Provides an easy-to-interpret in-console breakdown of missingness in rectangular data (data frames and matrices).
 #'
 #' \code{loch_missingness_monster()} tells you:
 #' \itemize{
@@ -11,8 +11,8 @@
 #' (The output comes in sentence form if there are less or equal to than 10 variables; it comes in table form if there are more than 10.)
 #'
 #' @param dat A data frame or matrix.
-#' @param percent A number (optional).
-#' @return \code{loch_missingness_monster()} just returns output in the console.
+#' @param percent A number [0, 100] (optional).
+#' @return Text output.
 #'
 #' @examples
 #' lmm_example <- replicate(12, sample(1:10, 3, replace = TRUE))
@@ -27,21 +27,20 @@ loch_missingness_monster <- function(dat, percent = NA) {
 
   # Column-wise NA counts
   col_NA_count <- apply(is.na(dat), 2, sum)
-  cat("Total NA in data set:", sum(col_NA_count), "\n\n")
 
   # Table of column-wise missingness
-  cat("Missingness table:\n")
-  missing_table <- data.frame(t(col_NA_count))
-  missing_table <- rbind(missing_table, round(col_NA_count / nrow(dat), digits = 3))
+  missing_table <- rbind(data.frame(t(col_NA_count)), round(col_NA_count / nrow(dat), digits = 2))
   rownames(missing_table) <- c('NA count:', 'NA percent:')
+
+  # Prints
+  cat("Total NA in data set:", sum(col_NA_count), "\n\nMissingness table:\n")
   print(missing_table)
   cat('\n')
 
-  # If a percent argument is given, calculate row-by-row missingness and determine which rows have missingness in excess of the specified percentage
-  if (is.na(percent) == F) {
-    percent_na_per_row <- (apply(is.na(dat), 1, sum) / ncol(dat)) * 100
-    exceeds_percent <- percent_na_per_row > percent
-    cat(sum(exceeds_percent), ifelse(sum(exceeds_percent) > 1, 'rows are', 'row is'),
-                                     'missing more than', percent, 'percent of values.\n')
+  # If a percent argument is given, calculate row-wise missingness and ID rows with missingness in excess of `percent`
+  if (is.na(percent) == FALSE) {
+    percent_NA_by_row <- (apply(is.na(dat), 1, sum) / ncol(dat)) * 100
+    exceeds_percent <- sum(percent_NA_by_row > percent)
+    cat(exceeds_percent, ifelse(exceeds_percent > 1, 'rows are', 'row is'), 'missing more than', percent, 'percent of values\n')
   }
 }

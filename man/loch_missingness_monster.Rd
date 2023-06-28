@@ -9,13 +9,13 @@ loch_missingness_monster(dat, percent = NA)
 \arguments{
 \item{dat}{A data frame or matrix.}
 
-\item{percent}{A number (optional).}
+\item{percent}{A number [0, 100] (optional).}
 }
 \value{
-\code{loch_missingness_monster()} just returns output in the console.
+Text output.
 }
 \description{
-Provides an easy-to-interpret in-console breakdown of missingness in data sets.
+Provides an easy-to-interpret in-console breakdown of missingness in rectangular data (data frames and matrices).
 }
 \details{
 \code{loch_missingness_monster()} tells you:
