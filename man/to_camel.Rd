@@ -9,7 +9,7 @@ to_camel(x, nums_to_camel = T)
 \arguments{
 \item{x}{A vector (character or coercible to character).}
 
-\item{nums_to_camel}{Should numbers be camel'ed as well? ('z_1_a' --> 'z1A')}
+\item{nums_to_camel}{Should numbers be cameled as well? ('z_1_a' --> 'z1A')}
 }
 \value{
 A vector.
@@ -18,9 +18,9 @@ A vector.
 Converts a vector of strings (usually column names) from snake_case to camelCase. (Specifically, lower camel case.)
 }
 \details{
-\code{to_camel()} will fail unless there is at least one underscore not in the first position somewhere in the set of input strings.
+\code{to_camel()} will return the input with a warning unless there is at least one underscore not in the first position somewhere in the set of input strings.
 
-E.g., if \code{x} is \code{c('aaa', 'bbb', '_ccc')}, \code{to_snake()} will error.
+E.g., \code{to_camel(c('aaa', 'bbb', '_ccc'))} will return \code{x} and a warning.
 
 No dependencies.
 }

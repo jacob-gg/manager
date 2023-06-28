@@ -9,7 +9,7 @@ to_snake(x, nums_to_snake = T)
 \arguments{
 \item{x}{A vector (character or coercible to character).}
 
-\item{nums_to_snake}{Should numbers be snake'd as well? ('z1' --> 'z_1')}
+\item{nums_to_snake}{Should numbers be snaked as well? ('z1' --> 'z_1')}
 }
 \value{
 A vector.
@@ -18,9 +18,9 @@ A vector.
 Converts a vector of strings (usually column names) from camelCase to snake_case.
 }
 \details{
-\code{to_snake()} will fail unless there is at least one capital letter not in the first position somewhere in the set of input strings.
+\code{to_snake()} will return the input with a warning unless there is at least one capital letter not in the first position somewhere in the set of input strings.
 
-#' E.g., if \code{x} is \code{c('aaa', 'bbb', 'Ccc')}, \code{to_snake()} will error.
+E.g., \code{to_snake(c('aaa', 'bbb', 'Ccc'))} will return \code{x} and a warning.
 
 No dependencies.
 }
