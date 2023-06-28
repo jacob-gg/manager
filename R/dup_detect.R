@@ -2,62 +2,49 @@
 #'
 #' Identifies all duplicated elements in vector, including "original" duplicated values.
 #'
-#' \code{dup_detect()} is different than \code{base::duplicated()}. If you fed \code{c(5, 5, 7)} to \code{duplicated()}, the function would identify one duplicated value (the second five).
-#' But for the purposes of bot detection and data wrangling, we often want to identify \emph{all} matching values in, say, a column of IP addresses (i.e., identify both 5s in the vector above as duplicates, not just the second one).
+#' \code{dup_detect()} is different than \code{base::duplicated()}. If you passed \code{c(5, 5, 7)} to \code{duplicated()}, the function would identify one duplicated value (the second \code{5}).
+#' But we often want to identify \emph{all} matching values in a vector of value (i.e., flag both \code{5} values in the vector above as duplicates, not just the second one).
 #' \code{dup_detect()} does that.
 #'
 #' \code{dup_detect()} will:
 #' \itemize{
-#'   \item Tell you the total number of duplicated values in a vector (e.g., IP addresses; latitudes; longitudes).
-#'   \item Optionally, tell you which vector elements match each specific duplicated value (\code{verbose} argument)
-#'   \item Return a vector (invisibly) with the indexes of every duplicated element (including "original" duplicates)
+#'   \item Return a logical vector (invisibly) indicating which elements are duplicated (including "original" duplicates)
+#'   \item Optionally, tell you the total number of duplicated values in a vector and the number of duplicate vector elements for each duplicated value (\code{verbose} argument)
 #' }
 #'
-#' @param test_col A vector.
-#' @param verbose \code{T/F} indicating whether detailed output should be printed to the console.
+#' @param test A vector.
+#' @param verbose \code{TRUE/FALSE} indicating whether detailed output should be printed to the console.
 #' @return
 #' \itemize{
-#'   \item Console output with information on duplicates (\code{verbose = T/F}).
-#'   \item \code{every_duplicated_row}: Invisible vector indexing duplicate vector elements (including "original" duplicates).
+#'   \item Console output with information on duplicates (\code{verbose = TRUE|FALSE}).
+#'   \item An invisible logical vector indicating which vector elements are duplicates (including "original" duplicates).
 #' }
 #' @examples
-#' # Create 100 IPv4 addresses and use dup_detect on them:
+#' # Create 20 IPv4 addresses and use dup_detect on them:
 #' set.seed(4)
-#' ip_draw <- 0:255
-#' ip_addresses <- vector(length = 100)
-#' for(i in 1:100) {
-#'   ip_addresses[i] <- paste0(sample(ip_draw, 4, replace = TRUE), collapse = ".")
-#' }
-#' ip_addresses[sample(1:100, 10, replace = FALSE)] <- sample(ip_addresses, 10, replace = FALSE)
-#' dup_detect(ip_addresses)
+#' ip_addresses <- replicate(20, paste0(sample(0:255, 4, replace = TRUE), collapse = "."))
+#' duplicate <- sample(seq_along(ip_addresses), size = 3)
+#' ip_addresses[duplicate + 1] <- ip_addresses[duplicate]
+#' dup_detect(ip_addresses, verbose = TRUE)
 #'
 #' @export
-dup_detect <- function(test_col, verbose = T) {
-  stopifnot('test_col should be a vector.' = is.vector(test_col))
+dup_detect <- function(test, verbose = FALSE) {
+  stopifnot('test argument must be a vector.' = is.vector(test))
+  stopifnot('verbose argument must be logical' = typeof(verbose) == 'logical')
 
-  # Identify rows containing duplicated values
-  duplicated_rows <- which(duplicated(test_col))
+  which_duplicated <- duplicated(test)
 
-  # Halt if no duplicates
-  if (length(duplicated_rows) == 0) {stop("There are no duplicated values; function halted.", call. = F)}
+  if (sum(which_duplicated) == 0) {warning("There are no duplicated values; returning test vector", call. = F); return(test)}
 
-  # Identify duplicated values
-  duplicated_values <- unique(test_col[duplicated_rows])
+  unique_duplicated_vals <- unique(test[which_duplicated])
+  every_duplicated_val <- test %in% unique_duplicated_vals
 
-  # Produce global variable depending on save = T|F
-  every_duplicated_row <- which(test_col %in% duplicated_values)
-
-  # Format and generate output
-  cat("Total # of elements with a duplicated value: ", length(every_duplicated_row), "\n", sep = "")
-  if (verbose == T) {
-    for (i in 1:length(duplicated_values)) {
-      dup_row_string <- paste0(which(test_col %in% duplicated_values[i]), collapse = ", ")
-      cat("The following elements share the value of ", as.character(duplicated_values[i]), ": ", dup_row_string, "\n", sep = "")
+  if (verbose == TRUE & is.na(verbose) == FALSE) {
+    cat("Total # of elements with a duplicated value: ", sum(every_duplicated_val), "\n", sep = "")
+    for (i in 1:length(unique_duplicated_vals)) {
+      cat(paste0('# of elements of test vector that share a value of ', unique_duplicated_vals[i], ': ', sum(test %in% unique_duplicated_vals[i]), '\n'))
     }
   }
 
-  # Identify and output variable class
-  cat("(Variable type: ", class(test_col), ")", "\n", sep = "")
-
-  invisible(every_duplicated_row)
+  invisible(every_duplicated_val)
 }

@@ -4,43 +4,39 @@
 \alias{dup_detect}
 \title{dup_detect}
 \usage{
-dup_detect(test_col, verbose = T)
+dup_detect(test, verbose = FALSE)
 }
 \arguments{
-\item{test_col}{A vector.}
+\item{test}{A vector.}
 
-\item{verbose}{\code{T/F} indicating whether detailed output should be printed to the console.}
+\item{verbose}{\code{TRUE/FALSE} indicating whether detailed output should be printed to the console.}
 }
 \value{
 \itemize{
-  \item Console output with information on duplicates (\code{verbose = T/F}).
-  \item \code{every_duplicated_row}: Invisible vector indexing duplicate vector elements (including "original" duplicates).
+  \item Console output with information on duplicates (\code{verbose = TRUE|FALSE}).
+  \item An invisible logical vector indicating which vector elements are duplicates (including "original" duplicates).
 }
 }
 \description{
 Identifies all duplicated elements in vector, including "original" duplicated values.
 }
 \details{
-\code{dup_detect()} is different than \code{base::duplicated()}. If you fed \code{c(5, 5, 7)} to \code{duplicated()}, the function would identify one duplicated value (the second five).
-But for the purposes of bot detection and data wrangling, we often want to identify \emph{all} matching values in, say, a column of IP addresses (i.e., identify both 5s in the vector above as duplicates, not just the second one).
+\code{dup_detect()} is different than \code{base::duplicated()}. If you passed \code{c(5, 5, 7)} to \code{duplicated()}, the function would identify one duplicated value (the second \code{5}).
+But we often want to identify \emph{all} matching values in a vector of value (i.e., flag both \code{5} values in the vector above as duplicates, not just the second one).
 \code{dup_detect()} does that.
 
 \code{dup_detect()} will:
 \itemize{
-  \item Tell you the total number of duplicated values in a vector (e.g., IP addresses; latitudes; longitudes).
-  \item Optionally, tell you which vector elements match each specific duplicated value (\code{verbose} argument)
-  \item Return a vector (invisibly) with the indexes of every duplicated element (including "original" duplicates)
+  \item Return a logical vector (invisibly) indicating which elements are duplicated (including "original" duplicates)
+  \item Optionally, tell you the total number of duplicated values in a vector and the number of duplicate vector elements for each duplicated value (\code{verbose} argument)
 }
 }
 \examples{
-# Create 100 IPv4 addresses and use dup_detect on them:
+# Create 20 IPv4 addresses and use dup_detect on them:
 set.seed(4)
-ip_draw <- 0:255
-ip_addresses <- vector(length = 100)
-for(i in 1:100) {
-  ip_addresses[i] <- paste0(sample(ip_draw, 4, replace = TRUE), collapse = ".")
-}
-ip_addresses[sample(1:100, 10, replace = FALSE)] <- sample(ip_addresses, 10, replace = FALSE)
-dup_detect(ip_addresses)
+ip_addresses <- replicate(20, paste0(sample(0:255, 4, replace = TRUE), collapse = "."))
+duplicate <- sample(seq_along(ip_addresses), size = 3)
+ip_addresses[duplicate + 1] <- ip_addresses[duplicate]
+dup_detect(ip_addresses, verbose = TRUE)
 
 }
