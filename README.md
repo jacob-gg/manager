@@ -7,6 +7,7 @@ Core tools:
 - `%+%`: String-concatenation infix operator, a la `+` in Python | &#9874;
 - `loch_missingness_monster()`: Provides an easy-to-interpret breakdown of missingness in datasets | &#402;(x)
 - `dup_detect()`: Identifies duplicated values in vectors/columns (beyond what `base::duplicated()` offers) and assists in removing them | &#402;(x)
+- `display_dist()`: Displays an approximate distribution shape in the console (or other i/o system) using Unicode Block Elements glyphs, e.g.: ▂▇▓▇▄▂▁▁▁▁▁ | &#402;(x)
 
 Miscellany:
 

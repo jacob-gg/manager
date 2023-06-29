@@ -2,6 +2,7 @@
 
 export("%+%")
 export(bray_curtis)
+export(display_dist)
 export(dup_detect)
 export(loch_missingness_monster)
 export(to_camel)
