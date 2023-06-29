@@ -7,10 +7,10 @@
 winograd(seed = Sys.time())
 }
 \arguments{
-\item{seed}{A seed to determine which Winograd schema is selected; leave as \code{Sys.time()} (default) for random selection}
+\item{seed}{A seed to determine which Winograd schema is selected; omit for random selection based on \code{Sys.time()}}
 }
 \description{
-Each time \code{winograd()} is run, it scrapes the text of one Winograd schema from the following link (website created/maintained by Ernest Davis; available under a CC 4.0 license): https://cs.nyu.edu/~davise/papers/WinogradSchemas/WSCollection.html
+Each time \code{winograd()} is run, it return the text of one Winograd schema from the following link (website created/maintained by Ernest Davis; available under a CC 4.0 license): https://cs.nyu.edu/~davise/papers/WinogradSchemas/WSCollection.html
 }
 \details{
 A Winograd schema is a sentence (really, a pair of possible sentences) structured such that there's an ambiguous pronoun that could be associated with either of two antecedent nouns. Which antecedent noun the pronoun is tied to depends on which of two words/phrases is swapped in elsewhere in the sentence. For example:
@@ -19,9 +19,7 @@ A Winograd schema is a sentence (really, a pair of possible sentences) structure
 
 \emph{[I]t} is the ambiguous pronoun: If the sentence is written with the word "protect," the pronoun refers to the table; if the sentence is written with the word "display," the pronoun refers to the cloth.
 
-Winograd schemas can be used as bot checks/attention checks in online surveys. Simply pick one construction of the sentence (e.g., "...to protect it" or "...to display it") and ask a respondent to identify the pronoun (e.g., "What is being [protected][displayed]?").
-
-Requires: \code{rvest} and \code{stringi}
+Winograd schemas can be used to check for or try to foil bots. Simply pick one construction of the sentence (e.g., "...to protect it" or "...to display it") and ask a respondent to identify the pronoun (e.g., "What is being [protected][displayed]?").
 }
 \examples{
 winograd() # random selection

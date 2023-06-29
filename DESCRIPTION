@@ -2,11 +2,10 @@ Package: manager
 Title: Tools
 Version: 0.1.0
 Authors@R: person("Jacob", "Goldstein-Greenwood", email = "jacobgg@virginia.edu", role = c("aut", "cre"))
-Description: A set of tools to make working with data easier; the package is mostly functions but does include some objects (e.g., a regex pattern for identifying non-person names).
+Description: A set of tools to make working with data easier.
 License: Mozilla Public License 2.0
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.2
 Imports:
-    stringi,
     rvest
