@@ -11,8 +11,9 @@ Core tools:
 
 Miscellany:
 
-- `winograd()`: Fetches a Winograd schema from [here](https://cs.nyu.edu/~davise/papers/WinogradSchemas/WSCollection.html) for use in bot detection (details below) | &#402;(x)
+- `softmax()`: Calculates the softmax function for a set of inputs to map real values to a probability distribution | &#402;(x)
 - `bray_curtis()`: Calculates the Bray-Curtis dissimilarity index (or Sorensen-Dice similarity index) between two sites (with site compositions given as vectors) | &#402;(x)
+- `winograd()`: Fetches a Winograd schema from [here](https://cs.nyu.edu/~davise/papers/WinogradSchemas/WSCollection.html) for use in bot detection (details below) | &#402;(x)
 
 Tags:
 

@@ -14,11 +14,11 @@ dup_detect(test, verbose = FALSE)
 \value{
 \itemize{
   \item Console output with information on duplicates (\code{verbose = TRUE|FALSE}).
-  \item An invisible logical vector indicating which vector elements are duplicates (including "original" duplicates).
+  \item A logical vector indicating which vector elements are duplicates (including "original" duplicates).
 }
 }
 \description{
-Identifies all duplicated elements in vector, including "original" duplicated values.
+Identifies all duplicated elements in an atomic vector, including "original" duplicated values.
 }
 \details{
 \code{dup_detect()} is different than \code{base::duplicated()}. If you passed \code{c(5, 5, 7)} to \code{duplicated()}, the function would identify one duplicated value (the second \code{5}).
