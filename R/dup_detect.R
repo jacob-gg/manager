@@ -1,6 +1,6 @@
 #' dup_detect
 #'
-#' Identifies all duplicated elements in vector, including "original" duplicated values.
+#' Identifies all duplicated elements in an atomic vector, including "original" duplicated values.
 #'
 #' \code{dup_detect()} is different than \code{base::duplicated()}. If you passed \code{c(5, 5, 7)} to \code{duplicated()}, the function would identify one duplicated value (the second \code{5}).
 #' But we often want to identify \emph{all} matching values in a vector of value (i.e., flag both \code{5} values in the vector above as duplicates, not just the second one).
@@ -17,7 +17,7 @@
 #' @return
 #' \itemize{
 #'   \item Console output with information on duplicates (\code{verbose = TRUE|FALSE}).
-#'   \item An invisible logical vector indicating which vector elements are duplicates (including "original" duplicates).
+#'   \item A logical vector indicating which vector elements are duplicates (including "original" duplicates).
 #' }
 #' @examples
 #' # Create 20 IPv4 addresses and use dup_detect on them:
@@ -29,22 +29,20 @@
 #'
 #' @export
 dup_detect <- function(test, verbose = FALSE) {
-  stopifnot('test argument must be a vector.' = is.vector(test))
+  stopifnot('test argument must be an atomic vector.' = is.atomic(test) && is.vector(test))
   stopifnot('verbose argument must be logical' = typeof(verbose) == 'logical')
 
   which_duplicated <- duplicated(test)
-
-  if (sum(which_duplicated) == 0) {warning("There are no duplicated values; returning test vector", call. = F); return(test)}
-
   unique_duplicated_vals <- unique(test[which_duplicated])
   every_duplicated_val <- test %in% unique_duplicated_vals
 
-  if (verbose == TRUE & is.na(verbose) == FALSE) {
+  if (!is.na(verbose) && verbose == TRUE && length(unique_duplicated_vals) > 0) {
     cat("Total # of elements with a duplicated value: ", sum(every_duplicated_val), "\n", sep = "")
     for (i in 1:length(unique_duplicated_vals)) {
       cat(paste0('# of elements of test vector that share a value of ', unique_duplicated_vals[i], ': ', sum(test %in% unique_duplicated_vals[i]), '\n'))
     }
   }
 
-  invisible(every_duplicated_val)
+  if (sum(which_duplicated) == 0) { warning("There are no duplicated values", call. = F) }
+  every_duplicated_val
 }
