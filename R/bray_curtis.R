@@ -18,7 +18,7 @@
 #'
 #' @export
 bray_curtis <- function(site1, site2, sorensen_dice = FALSE) {
-  if ((is.atomic(site1) & is.vector(site1)) == FALSE | (is.atomic(site1) & is.vector(site2)) == FALSE) {
+  if ((is.atomic(site1) && is.vector(site1)) == FALSE || (is.atomic(site1) && is.vector(site2)) == FALSE) {
     stop('`site1` and `site2` must be supplied as vectors.')
   }
   if (sorensen_dice %in% c(TRUE, FALSE) == FALSE) {
