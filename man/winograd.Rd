@@ -4,10 +4,10 @@
 \alias{winograd}
 \title{winograd}
 \usage{
-winograd(seed = Sys.time())
+winograd(seed = NULL)
 }
 \arguments{
-\item{seed}{A seed to determine which Winograd schema is selected; omit for random selection based on \code{Sys.time()}}
+\item{seed}{A(n optional) seed to determine which Winograd schema is selected. \code{NULL} by default.}
 }
 \description{
 Each time \code{winograd()} is run, it return the text of one Winograd schema from the following link (website created/maintained by Ernest Davis; available under a CC 4.0 license): https://cs.nyu.edu/~davise/papers/WinogradSchemas/WSCollection.html
@@ -22,7 +22,6 @@ A Winograd schema is a sentence (really, a pair of possible sentences) structure
 Winograd schemas can be used to check for or try to foil bots. Simply pick one construction of the sentence (e.g., "...to protect it" or "...to display it") and ask a respondent to identify the pronoun (e.g., "What is being [protected][displayed]?").
 }
 \examples{
-winograd() # random selection
-winograd(seed = 10) # repeatable selection
+winograd(seed = 10)
 
 }

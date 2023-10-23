@@ -23,7 +23,7 @@
 #' @export
 loch_missingness_monster <- function(dat, percent = NA) {
   stopifnot('dat must be a data frame or matrix' = (is.data.frame(dat) | is.matrix(dat)))
-  stopifnot('percent argument must be [0, 100] or NA' = ((percent >= 0 & percent <= 100) | is.na(percent)))
+  stopifnot('percent argument must be [0, 100] or NA' = (is.na(percent) || (percent >= 0 & percent <= 100)))
 
   # Column-wise NA counts
   col_NA_count <- apply(is.na(dat), 2, sum)

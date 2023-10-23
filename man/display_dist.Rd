@@ -7,7 +7,7 @@
 display_dist(x, width = 10)
 }
 \arguments{
-\item{x}{A numeric vector.}
+\item{x}{A numeric vector (double or integer).}
 
 \item{width}{The number of blocks comprising the printed distribution.}
 }

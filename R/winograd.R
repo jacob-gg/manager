@@ -10,14 +10,13 @@
 #'
 #' Winograd schemas can be used to check for or try to foil bots. Simply pick one construction of the sentence (e.g., "...to protect it" or "...to display it") and ask a respondent to identify the pronoun (e.g., "What is being [protected][displayed]?").
 #'
-#' @param seed A seed to determine which Winograd schema is selected; omit for random selection based on \code{Sys.time()}
+#' @param seed A(n optional) seed to determine which Winograd schema is selected. \code{NULL} by default.
 #' @examples
-#' winograd() # random selection
-#' winograd(seed = 10) # repeatable selection
+#' winograd(seed = 10)
 #'
 #' @export
-winograd <- function(seed = Sys.time()) {
-  if (inherits(seed, 'numeric') & is.na(seed) == FALSE) {
+winograd <- function(seed = NULL) {
+  if (!is.null(seed) && inherits(seed, 'numeric')) {
     set.seed(seed)
   }
 

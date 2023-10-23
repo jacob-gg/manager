@@ -18,7 +18,8 @@ A vector.
 Converts a vector of strings (usually column names) from camelCase to snake_case.
 }
 \details{
-\code{to_snake()} will return the input with a warning unless there is at least one capital letter not in the first position somewhere in the set of input strings.
+\code{to_snake()} will return the input with a warning unless there is at least one
+capital letter not in the first position somewhere in the set of input strings.
 
 E.g., \code{to_snake(c('aaa', 'bbb', 'Ccc'))} will return \code{x} and a warning.
 

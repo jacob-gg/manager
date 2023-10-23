@@ -18,8 +18,12 @@
 #'
 #' @export
 bray_curtis <- function(site1, site2, sorensen_dice = FALSE) {
-  if (is.vector(site1) == FALSE | is.vector(site2) == FALSE) {stop('`site1` and `site2` must be supplied as vectors.')}
-  if (sorensen_dice %in% c(TRUE, FALSE) == FALSE) {warning('sorensen_dice is not TRUE or FALSE; printing Bray-Curtis dissimilarity index by default.', call. = FALSE)}
+  if ((is.atomic(site1) & is.vector(site1)) == FALSE | (is.atomic(site1) & is.vector(site2)) == FALSE) {
+    stop('`site1` and `site2` must be supplied as vectors.')
+  }
+  if (sorensen_dice %in% c(TRUE, FALSE) == FALSE) {
+    warning('sorensen_dice is not TRUE or FALSE; printing Bray-Curtis dissimilarity index by default.', call. = FALSE)
+  }
 
   if (any(is.na(site1))) {
     n_na <- sum(is.na(site1))
