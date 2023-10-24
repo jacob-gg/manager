@@ -15,10 +15,12 @@ to_camel(x, nums_to_camel = T)
 A vector.
 }
 \description{
-Converts a vector of strings (usually column names) from snake_case to camelCase. (Specifically, lower camel case.)
+Converts a vector of strings (e.g., column names) from snake_case to camelCase. (Specifically, lower camel case.)
 }
 \details{
-\code{to_camel()} will return the input with a warning unless there is at least one underscore not in the first position somewhere in the set of input strings.
+\code{to_camel()} will return the input as a character vector with a warning
+unless there is at least one underscore not in the first position somewhere
+in the set of input strings.
 
 E.g., \code{to_camel(c('aaa', 'bbb', '_ccc'))} will return \code{x} and a warning.
 
