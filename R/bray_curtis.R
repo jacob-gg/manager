@@ -4,8 +4,8 @@
 #'
 #' No dependencies.
 #'
-#' @param site1 A vector containing a set of observations (the observations at the first site).
-#' @param site2 A vector containing a set of observations (the observations at the second site).
+#' @param site1 An atomic vector containing a set of observations (the observations at the first site).
+#' @param site2 An atomic vector containing a set of observations (the observations at the second site).
 #' @param sorensen_dice If TRUE, the Sørensen-Dice similarity index (one minus Bray-Curtis dissimilarity index) is returned (FALSE by default)
 #'
 #' @return A number [0, 1].

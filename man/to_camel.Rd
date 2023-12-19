@@ -7,7 +7,7 @@
 to_camel(x, nums_to_camel = T)
 }
 \arguments{
-\item{x}{A vector (character or coercible to character).}
+\item{x}{An atomic vector (character or coercible to character).}
 
 \item{nums_to_camel}{Should numbers be cameled as well? ('z_1_a' --> 'z1A')}
 }

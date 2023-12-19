@@ -10,7 +10,7 @@
 #'
 #' No dependencies.
 #'
-#' @param x A vector (character or coercible to character).
+#' @param x An atomic vector (character or coercible to character).
 #' @param nums_to_snake Should numbers be snaked as well? ('z1' --> 'z_1')
 #' @return A vector.
 #' @examples
@@ -54,7 +54,7 @@ to_snake <- function(x, nums_to_snake = T) {
 #'
 #' No dependencies.
 #'
-#' @param x A vector (character or coercible to character).
+#' @param x An atomic vector (character or coercible to character).
 #' @param nums_to_camel Should numbers be cameled as well? ('z_1_a' --> 'z1A')
 #' @return A vector.
 #' @examples

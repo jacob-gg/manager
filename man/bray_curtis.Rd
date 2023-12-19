@@ -7,9 +7,9 @@
 bray_curtis(site1, site2, sorensen_dice = FALSE)
 }
 \arguments{
-\item{site1}{A vector containing a set of observations (the observations at the first site).}
+\item{site1}{An atomic vector containing a set of observations (the observations at the first site).}
 
-\item{site2}{A vector containing a set of observations (the observations at the second site).}
+\item{site2}{An atomic vector containing a set of observations (the observations at the second site).}
 
 \item{sorensen_dice}{If TRUE, the Sørensen-Dice similarity index (one minus Bray-Curtis dissimilarity index) is returned (FALSE by default)}
 }

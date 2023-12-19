@@ -7,7 +7,7 @@
 dup_detect(test, verbose = FALSE)
 }
 \arguments{
-\item{test}{A vector.}
+\item{test}{An atomic vector.}
 
 \item{verbose}{\code{TRUE/FALSE} indicating whether detailed output should be printed to the console.}
 }

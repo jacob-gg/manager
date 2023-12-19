@@ -12,7 +12,7 @@
 #'   \item Optionally, tell you the total number of duplicated values in a vector and the number of duplicate vector elements for each duplicated value (\code{verbose} argument)
 #' }
 #'
-#' @param test A vector.
+#' @param test An atomic vector.
 #' @param verbose \code{TRUE/FALSE} indicating whether detailed output should be printed to the console.
 #' @return
 #' \itemize{

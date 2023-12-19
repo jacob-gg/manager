@@ -7,7 +7,7 @@
 to_snake(x, nums_to_snake = T)
 }
 \arguments{
-\item{x}{A vector (character or coercible to character).}
+\item{x}{An atomic vector (character or coercible to character).}
 
 \item{nums_to_snake}{Should numbers be snaked as well? ('z1' --> 'z_1')}
 }
