@@ -16,7 +16,7 @@ A data set if \code{dat} is a data set name; console output (and \code{NULL} inv
 }
 \description{
 Retrieve data sets used in \emph{Foundations of Statistics for Data Scientists With R and Python}
-(Agresti & Kateri, 2021) for use as demo/testing data.
+(Agresti & Kateri, 2021) for use as demo/test data.
 }
 \examples{
 stat4DS_data('Florida', preview = TRUE)

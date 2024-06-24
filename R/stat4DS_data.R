@@ -1,7 +1,7 @@
 #' stat4DS_data
 #'
 #' Retrieve data sets used in \emph{Foundations of Statistics for Data Scientists With R and Python}
-#' (Agresti & Kateri, 2021) for use as demo/testing data.
+#' (Agresti & Kateri, 2021) for use as demo/test data.
 #'
 #' @param dat A length-one character vector; the name of a data set or \code{'all'} to return names of all possible data sets.
 #' @param preview If \code{TRUE}, only return the first few rows of the data set; default is \code{FALSE}.
