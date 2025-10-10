@@ -7,6 +7,7 @@
 #' @param preview If \code{TRUE}, only return the first few rows of the data set; default is \code{FALSE}.
 #'
 #' @return A data set if \code{dat} is a data set name; console output (and \code{NULL} invisibly) if \code{dat} is \code{'all'}.
+#'
 #' @examples
 #' stat4DS_data('Florida', preview = TRUE)
 #' stat4DS_data('all')

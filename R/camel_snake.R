@@ -11,8 +11,10 @@
 #' No dependencies.
 #'
 #' @param x An atomic vector (character or coercible to character).
-#' @param nums_to_snake Should numbers be snaked as well? ('z1' --> 'z_1')
+#' @param nums_to_snake Should numbers be snaked as well (\code{z1} --> \code{z_1})?
+#'
 #' @return A vector.
+#'
 #' @examples
 #' camels <- c('dromedaryCamel', 'wildBactrianCamel', 'BactrianLookingUp',
 #' 'aCaravanOf10Camels', 'aLargerCaravanOf11')
@@ -55,8 +57,10 @@ to_snake <- function(x, nums_to_snake = T) {
 #' No dependencies.
 #'
 #' @param x An atomic vector (character or coercible to character).
-#' @param nums_to_camel Should numbers be cameled as well? ('z_1_a' --> 'z1A')
+#' @param nums_to_camel Should numbers be cameled as well (\code{z_1_a} --> \code{z1A})?
+#'
 #' @return A vector.
+#'
 #' @examples
 #' snakes <- c('rainbow_boa', 'blue_racer', 'dragon_snake',
 #' 'a_set_of_5_garter_snakes', 'a_larger_set_of_6_kingsnakes')

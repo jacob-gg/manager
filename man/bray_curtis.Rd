@@ -11,7 +11,7 @@ bray_curtis(site1, site2, sorensen_dice = FALSE)
 
 \item{site2}{An atomic vector containing a set of observations (the observations at the second site).}
 
-\item{sorensen_dice}{If TRUE, the Sørensen-Dice similarity index (one minus Bray-Curtis dissimilarity index) is returned (FALSE by default)}
+\item{sorensen_dice}{If \code{TRUE}, the Sørensen-Dice similarity index (one minus Bray-Curtis dissimilarity index) is returned (\code{FALSE} by default).}
 }
 \value{
 A number [0, 1].

@@ -8,6 +8,7 @@
 #' @param rhs String (or string-coercible object) to be concatenated with the lhs (left-hand side).
 #'
 #' @return A character vector with length equal to the maximum length of the inputs.
+#'
 #' @examples
 #' \dontrun{
 #' 'aaa ' %+% 'bbb ' %+% 'ccc ' %+% 'ddd'

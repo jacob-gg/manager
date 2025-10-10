@@ -1,12 +1,15 @@
 #' softmax
 #'
-#' Calculates the softmax function for mapping a set of real values to a probability distribution.
-#' The maxima/um receives quite a bit of weight via softmax: Given the values \code{[4, 4, 4, 5]}, softmax
-#' returns a probability of .475 for the final element and 0.175 for each of the first three.
+#' Calculates the softmax function for mapping a set of real values to a
+#' probability distribution. The maxima/um receives substantial weight: Given
+#' the values \code{[4, 4, 4, 5]}, the softmax function returns a probability of
+#' .475 for the final element and 0.175 for each of the first three.
 #'
 #' @param x A double or integer vector.
 #' @param digits The number of digits to round the output probabilities to.
+#'
 #' @return A length-one vector.
+#'
 #' @examples
 #' x <- c(3.5, 4.0, 6.5)
 #' softmax(x)
@@ -28,9 +31,5 @@ softmax <- function(x, digits = NULL) {
     warning('>=1 NA found and removed from x before calculating softmax', call. = FALSE)
   }
   out <- exp(x) / sum(exp(x))
-  if (!is.null(digits)) {
-    round(out, digits = digits)
-  } else {
-    out
-  }
+  if (!is.null(digits)) round(out, digits = digits) else out
 }

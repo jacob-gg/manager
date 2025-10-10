@@ -9,8 +9,11 @@ winograd(seed = NULL)
 \arguments{
 \item{seed}{A(n optional) seed to determine which Winograd schema is selected. \code{NULL} by default.}
 }
+\value{
+A length-one character vector containing a Winograd schema.
+}
 \description{
-Each time \code{winograd()} is run, it return the text of one Winograd schema from the following link (website created/maintained by Ernest Davis; available under a CC 4.0 license): https://cs.nyu.edu/~davise/papers/WinogradSchemas/WSCollection.html
+\code{winograd()} returns the text of one Winograd schema from the following link (website created/maintained by Ernest Davis; available under a CC 4.0 license): https://cs.nyu.edu/~davise/papers/WinogradSchemas/WSCollection.html
 }
 \details{
 A Winograd schema is a sentence (really, a pair of possible sentences) structured such that there's an ambiguous pronoun that could be associated with either of two antecedent nouns. Which antecedent noun the pronoun is tied to depends on which of two words/phrases is swapped in elsewhere in the sentence. For example:

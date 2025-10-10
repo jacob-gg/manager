@@ -8,7 +8,9 @@
 #'
 #' @param x A numeric vector (double or integer).
 #' @param width The number of blocks comprising the printed distribution.
+#'
 #' @return Console output.
+#'
 #' @examples
 #' # Normal
 #' set.seed(99)

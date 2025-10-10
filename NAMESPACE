@@ -2,8 +2,10 @@
 
 export("%+%")
 export(bray_curtis)
+export(count_dir_changes)
 export(display_dist)
 export(dup_detect)
+export(gen_monotonic)
 export(loch_missingness_monster)
 export(softmax)
 export(stat4DS_data)

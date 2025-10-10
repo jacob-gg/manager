@@ -1,6 +1,6 @@
 #' winograd
 #'
-#' Each time \code{winograd()} is run, it return the text of one Winograd schema from the following link (website created/maintained by Ernest Davis; available under a CC 4.0 license): https://cs.nyu.edu/~davise/papers/WinogradSchemas/WSCollection.html
+#' \code{winograd()} returns the text of one Winograd schema from the following link (website created/maintained by Ernest Davis; available under a CC 4.0 license): https://cs.nyu.edu/~davise/papers/WinogradSchemas/WSCollection.html
 #'
 #' A Winograd schema is a sentence (really, a pair of possible sentences) structured such that there's an ambiguous pronoun that could be associated with either of two antecedent nouns. Which antecedent noun the pronoun is tied to depends on which of two words/phrases is swapped in elsewhere in the sentence. For example:
 #'
@@ -11,6 +11,9 @@
 #' Winograd schemas can be used to check for or try to foil bots. Simply pick one construction of the sentence (e.g., "...to protect it" or "...to display it") and ask a respondent to identify the pronoun (e.g., "What is being [protected][displayed]?").
 #'
 #' @param seed A(n optional) seed to determine which Winograd schema is selected. \code{NULL} by default.
+#'
+#' @return A length-one character vector containing a Winograd schema.
+#'
 #' @examples
 #' winograd(seed = 10)
 #'
@@ -26,9 +29,9 @@ winograd <- function(seed = NULL) {
   wino_nodes_text <- rvest::html_nodes(wino_nodes, 'text')
 
   # Remove Winograds with spaghetti HTML, pick one, and get its text
-  exclude <- which(unlist(lapply(lapply(wino_nodes_text, function(x) rvest::html_text(x, 'text')), nchar)) > 500)
-  wino_num <- sample((1:length(wino_nodes_text))[-exclude], 1)
-  wino_text <- rvest::html_text(wino_nodes_text[[wino_num]], 'text')
+  wino_nodes_text <- rvest::html_text(wino_nodes_text)
+  wino_nodes_text <- wino_nodes_text[-which(sapply(wino_nodes_text, nchar) > 500)]
+  wino_text <- wino_nodes_text[sample(1:length(wino_nodes_text), 1)]
 
   # Clean text
   wino_text <- gsub('\n', ' ', wino_text)
