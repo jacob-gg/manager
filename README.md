@@ -9,7 +9,7 @@ Core tools:
 - `dup_detect()`: Identifies duplicated values in vectors/columns (beyond what `base::duplicated()` offers) and assists in removing them | &#402;(x)
 - `display_dist()`: Displays an approximate distribution shape in the console (or other i/o system) using Unicode Block Elements glyphs, e.g.: ▂▇▓▇▄▂▁▁▁▁▁ | &#402;(x)
 - `gen_monotonic()`: Generates monotonic data (increasing or decreasing, with user-specified minimum/maximum steps) | &#402;(x)
-- `count_dir_changes()`: Counts direction changes in a vector (i.e., 0 for monotonic data) | &#402;(x)
+- `count_dir_changes()`: Counts direction changes in a vector (e.g., zero for monotonic data) | &#402;(x)
 
 Miscellany:
 
